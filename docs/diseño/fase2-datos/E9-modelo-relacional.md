@@ -1,0 +1,18 @@
+# Modelo Relacional
+
+- `ROL`(id_rol PK, nombre)
+- `USUARIO`(id_usuario PK, correo, contraseña, estado, id_rol FK)
+- `ADMINISTRADOR`(id_admin PK, nombre, id_usuario FK)
+- `DOCENTE`(id_docente PK, nombre, especialidad, id_usuario FK)
+- `CARRERA`(id_carrera PK, nombre, descripcion)
+- `ESTUDIANTE`(id_estudiante PK, nombre, estado_sesion, id_usuario FK, id_carrera FK)
+- `TORRE`(id_torre PK, nombre, ubicacion, descripcion)
+- `PISO`(id_piso PK, numero_piso, descripcion, id_torre FK)
+- `AULA`(id_aula PK, codigo, capacidad, estado, id_piso FK)
+- `MATERIA`(id_materia PK, nombre, codigo, id_docente FK)
+- `ASIGNACION`(id_asignacion PK, id_materia FK, id_aula FK, dia, hora_inicio, hora_fin)
+- `UBICACION`(id_ubicacion PK, coordenadas, referencia, id_estudiante FK)
+- `RUTA`(id_ruta PK, id_origen FK, id_destino FK, distancia, tiempo_estimado)
+- `CONSULTA`(id_consulta PK, criterio_busqueda, fecha, id_estudiante FK)
+- `NOTIFICACION`(id_notificacion PK, mensaje, fecha_envio, tipo, id_estudiante FK)
+- `REPORTE_SOPORTE`(id_reporte PK, descripcion, estado, fecha_reporte, id_estudiante FK)
